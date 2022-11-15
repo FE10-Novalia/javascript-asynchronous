@@ -15,8 +15,7 @@ function snakesAndLaddersGame(stepNow, seconds, callback) {
     return new Promise((resolve, reject) => {
         console.log('Let the game begin...\n\n')
 
-        let i = 1
-        while(i <= 5){
+       for(let i = 1; i <= 5; i++){
             let secondsHere = seconds()
             let stepHere = callback()
             setTimeout(()=>{
@@ -25,8 +24,7 @@ function snakesAndLaddersGame(stepNow, seconds, callback) {
             console.log(`sehingga langkahnya bertambah dari ${stepNow} menjadi ${stepNow + stepHere}`)
             console.log('-------------------------------------------------------------')
             stepNow += stepHere
-        }, secondsHere)
-            i++
+            }, secondsHere)
         }
         setTimeout(() => {
             if(stepNow >= shallPassed){
